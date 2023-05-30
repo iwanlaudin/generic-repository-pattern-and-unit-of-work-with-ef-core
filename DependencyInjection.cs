@@ -14,7 +14,9 @@ namespace GenericRepositoryPattern
             services.AddScoped<IApplicationDbContext>(provider => 
                 provider.GetRequiredService<ApplicationDbContext>());
 
-            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }

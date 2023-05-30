@@ -36,3 +36,8 @@ D:\Learn\Programming\C#\GenericRepositoryPattern\obj\Debug\net7.0\refint\Generic
 D:\Learn\Programming\C#\GenericRepositoryPattern\obj\Debug\net7.0\GenericRepositoryPattern.pdb
 D:\Learn\Programming\C#\GenericRepositoryPattern\obj\Debug\net7.0\GenericRepositoryPattern.genruntimeconfig.cache
 D:\Learn\Programming\C#\GenericRepositoryPattern\obj\Debug\net7.0\ref\GenericRepositoryPattern.dll
+D:\Learn\Programming\C#\GenericRepositoryPattern\bin\Debug\net7.0\Humanizer.dll
+D:\Learn\Programming\C#\GenericRepositoryPattern\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Learn\Programming\C#\GenericRepositoryPattern\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Learn\Programming\C#\GenericRepositoryPattern\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Learn\Programming\C#\GenericRepositoryPattern\bin\Debug\net7.0\System.CodeDom.dll

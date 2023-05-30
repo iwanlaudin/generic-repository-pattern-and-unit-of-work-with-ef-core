@@ -22,16 +22,15 @@ namespace GenericRepositoryPattern.Repositories
             return await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public IRepository<TEntity, TResult> GetRepository<TEntity, TResult>()
+        public IRepository<TEntity> GetRepository<TEntity>()
             where TEntity : class
-            where TResult : class
         {
             if (_repositories.ContainsKey(typeof(TEntity)))
             {
-                return (IRepository<TEntity, TResult>)_repositories[typeof(TEntity)];
+                return (IRepository<TEntity>)_repositories[typeof(TEntity)];
             }
 
-            var repository = new Repository<TEntity, TResult>(_dbContext);
+            var repository = new Repository<TEntity>(_dbContext);
             _repositories.Add(typeof(TEntity), repository);
             return repository;
         }
