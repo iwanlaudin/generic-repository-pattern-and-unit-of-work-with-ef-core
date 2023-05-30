@@ -1,6 +1,4 @@
-
 using GenericRepositoryPattern.DTOs;
-using GenericRepositoryPattern.Entities;
 
 namespace GenericRepositoryPattern.Business.Interfaces
 {

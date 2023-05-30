@@ -23,9 +23,15 @@ namespace GenericRepositoryPattern.Controllers
         }
 
         [HttpPost]
-        public void Add(CategoryRequest category)
+        [ProducesResponseType(type: typeof(string), statusCode: StatusCodes.Status200OK)]
+        public IActionResult Create(CategoryRequest category)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
+            }
             _categoryService.Add(category);
+            return Ok("Category added successfully");
         }
     }
 }

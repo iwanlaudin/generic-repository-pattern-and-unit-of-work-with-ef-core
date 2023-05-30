@@ -1,4 +1,4 @@
-
+using System.Linq.Expressions;
 using GenericRepositoryPattern.Abstractions;
 using GenericRepositoryPattern.Business.Interfaces;
 using GenericRepositoryPattern.DTOs;
@@ -17,9 +17,18 @@ namespace GenericRepositoryPattern.Business.Services
             _categoryRepository = _unitOfWork.GetRepository<Category>();
         }
 
-        public Task<IEnumerable<CategoryDto>> GetCategories()
+        public async Task<IEnumerable<CategoryDto>> GetCategories()
         {
-            throw new NotImplementedException();
+            Expression<Func<Category, bool>> filter = a => a.DeletedAt == null;
+            Expression<Func<Category, CategoryDto>> selector = a => new CategoryDto
+            {
+                Id = a.Id,
+                Name = a.Name,
+                CreatedAt = a.CreatedAt
+            };
+
+            var categorys = await _categoryRepository.FindAllAsync(filter, selector);
+            return categorys;
         }
 
         public void Add(CategoryRequest category)
